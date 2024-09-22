@@ -1,0 +1,31 @@
+name: Sobelow
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  schedule:
+    - cron: '0 08 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  sobelow_job:
+    permissions:
+      contents: read # for actions/checkout to fetch code
+      security-events: write # for github/codeql-action/upload-sarif to upload SARIF results
+      actions: read # only required for a private repository by github/codeql-action/upload-sarif to get the Action run status
+    runs-on: ubuntu-24.04
+    name: Sobelow Job
+    steps:
+      - uses: actions/checkout@v2
+      - id: run-action
+        uses: sobelow/action@v1
+        with:
+          flags: '-i Config'
+      - name: Upload report
+        uses: github/codeql-action/upload-sarif@v1
+        with:
+          sarif_file: results.sarif
