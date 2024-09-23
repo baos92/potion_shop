@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         otp: ['25.0.4']       # OTP version 
-        elixir: ['1.14.1']    # elixir version
+        elixir: ['1.15']    # elixir version
     steps:
     # Step: Setup Elixir + Erlang image as the base.
     - name: Set up Elixir
