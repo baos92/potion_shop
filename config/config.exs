@@ -66,3 +66,5 @@ import_config "#{config_env()}.exs"
 #Authorization=Basic ZGpjOTh1M2ppZWRtaTI4M2V1OTI4OmFiY2RlZjAxMjM0NTY3ODkw
 
 #aws "SecretAccessKey": "rv1xTuMa6Fr1h5ojNW8BsguSGPiqkT7GNUEZZoL"
+
+#"new password": "1234Abcd5678"
