@@ -76,13 +76,12 @@ jobs:
     #- name: Check Formatting
     #  run: mix format --check-formatted
 
-    # Step: Run credo. Next steps for sobelow and others.
-    - name: Run credo
-      run: |
-        mix credo --strict --ignore todo,fixme,line
-        0
-      shell: sh
-
     # Step: Run Audit. Next steps for sobelow and others.
     - name: Run Audit
       run: mix deps.audit
+
+    # Step: Run credo. Next steps for sobelow and others.
+    - name: Run credo
+      run: mix credo --strict --ignore todo,fixme,line
+
+
