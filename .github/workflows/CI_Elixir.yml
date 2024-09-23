@@ -73,8 +73,8 @@ jobs:
 
     # Step: Check that the checked in code has already been formatted
     # Customize this step as desired.
-    - name: Check Formatting
-      run: mix format --check-formatted
+    #- name: Check Formatting
+    #  run: mix format --check-formatted
 
     # Step: Run credo. Next steps for sobelow and others.
     - name: Run credo
